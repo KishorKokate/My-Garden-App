@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mediaplayer">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/grass"
+        android:label="My Garden"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MediaPlayer">
+        <receiver android:name=".PlantWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/plant_widget_provider_info" />
+        </receiver>
+
+        <service
+            android:name=".GridWidgetService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".PlantWateringService"
+            android:exported="false" />
+
+        <provider
+            android:name=".provider.PlantContentProvider"
+            android:authorities="com.example.android.mygarden"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/title_activity_my_garden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.PlantDetailActivity"
+            android:label="@string/title_activity_plant_detail" />
+        <activity
+            android:name=".ui.AddPlantActivity"
+            android:label="@string/title_activity_add_plant" />
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="onPlantClick"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="150dp"
+        android:id="@+id/plant_list_item_image"
+        android:src="@drawable/empty_pot"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/plant_list_item_name"
+        android:textAlignment="center"
+        android:text="123"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>
